@@ -28,7 +28,7 @@ server.use('/images', express.static('images'))
 //El callback se ejecuta cada vez que se hace una request al servidor
 server.use(cors())
 server.get('/', (request, response) => {
-    response.send("<h1>Hello World</h1>")
+    response.send("<link rel='icon' href='/ruta/al/favicon.ico' type='image/x-icon'>")
 })
 
 server.use('/api/projects', projectRoutes)
@@ -41,6 +41,16 @@ server.use('/api/login', loginRoutes)
 
 server.use('/media', express.static(path.join(CURRENT_DIR, "./uploads")))
 
+server.use((req, res, next) => {
+    // No hagas nada o envía una respuesta vacía
+    if (req.originalUrl.includes('favicon.ico')) {
+        res.status(204).end()
+      } 
+
+      next()
+      
+  });
+  
 server.use(notFound)
 
 server.use(handleError)

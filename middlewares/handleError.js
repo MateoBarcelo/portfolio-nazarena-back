@@ -2,7 +2,7 @@
 functions. Each function is associated with a specific error type. */
 const ERROR_HANDLERS = {
 
-    defaultError : res => res.status(500).end(),
+    defaultError : res => res.status(500),
 
     CastError : res => res.status(400).send({ error: 'id used is malformed'}),
 
