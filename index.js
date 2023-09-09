@@ -28,7 +28,7 @@ server.use('/images', express.static('images'))
 //El callback se ejecuta cada vez que se hace una request al servidor
 server.use(cors())
 server.get('/', (request, response) => {
-    response.send("<link rel='icon' href='/ruta/al/favicon.ico' type='image/x-icon'>")
+    response.send("<h1>Api used for Nazarena's Portfolio</h1>")
 })
 
 server.use('/api/projects', projectRoutes)
