@@ -19,7 +19,7 @@ projectRoutes.get('/', (request, response, next) => {
 projectRoutes.post('/', userExtractor, async (request, response, next) => { //we can pass in middlewares on second parameter of http method
 
     const {body} = request
-    const {name, year, desc, img, category, linkto} = body
+    const {name, year, description, img, category, linkto} = body
 
     const { userId } = request
 
@@ -34,7 +34,7 @@ projectRoutes.post('/', userExtractor, async (request, response, next) => { //we
     const newProject = new Project({
         name,
         year,
-        desc,
+        description,
         img,
         category,
         linkto,
