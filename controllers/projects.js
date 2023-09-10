@@ -66,12 +66,12 @@ projectRoutes.get('/:id', (request, response, next) => {
 
 projectRoutes.put('/:id', (request, response, next) => {
     const {id} = request.params
-    const {name, year, desc, img, category, linkto, user} = request.body
+    const {name, year, description, img, category, linkto, user} = request.body
 
     const newProjectInfo = new Project({
         name,
         year,
-        desc,
+        description,
         img,
         category,
         linkto,
