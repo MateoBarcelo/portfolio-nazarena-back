@@ -12,6 +12,7 @@ const Project = require('./models/Project')
 const userRoutes = require('./controllers/users.js')
 const projectRoutes = require('./controllers/projects.js')
 const loginRoutes = require('./controllers/login.js')
+const contactRouter = require('./controllers/contact.js')
 
 const handleError = require('./middlewares/handleError.js')
 const notFound = require('./middlewares/notFound.js')
@@ -38,6 +39,8 @@ server.use('/api/upload', uploadRouter)
 server.use('/api/users', userRoutes)
 
 server.use('/api/login', loginRoutes)
+
+server.use('/api/contact', contactRouter)
 
 server.use('/media', express.static(path.join(CURRENT_DIR, "./uploads")))
 
